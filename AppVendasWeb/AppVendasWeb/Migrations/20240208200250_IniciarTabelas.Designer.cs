@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppVendasWeb.Migrations
 {
     [DbContext(typeof(AppVendasContext))]
-    [Migration("20240208170522_AddTabelasProdutoCategoria")]
-    partial class AddTabelasProdutoCategoria
+    [Migration("20240208200250_IniciarTabelas")]
+    partial class IniciarTabelas
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,6 +78,33 @@ namespace AppVendasWeb.Migrations
                     b.ToTable("Cliente", (string)null);
                 });
 
+            modelBuilder.Entity("AppVendasWeb.Models.ItemDaVenda", b =>
+                {
+                    b.Property<Guid>("ItemDaVendaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProdutoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("VendaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ItemDaVendaId");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.HasIndex("VendaId");
+
+                    b.ToTable("ItemDaVendas", (string)null);
+                });
+
             modelBuilder.Entity("AppVendasWeb.Models.Produto", b =>
                 {
                     b.Property<Guid>("ProdutoId")
@@ -102,6 +129,50 @@ namespace AppVendasWeb.Migrations
                     b.ToTable("Produtos", (string)null);
                 });
 
+            modelBuilder.Entity("AppVendasWeb.Models.Venda", b =>
+                {
+                    b.Property<Guid>("VendaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DataVenda")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NotaFiscal")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ValorTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("VendaId");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Vendas", (string)null);
+                });
+
+            modelBuilder.Entity("AppVendasWeb.Models.ItemDaVenda", b =>
+                {
+                    b.HasOne("AppVendasWeb.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AppVendasWeb.Models.Venda", "Venda")
+                        .WithMany()
+                        .HasForeignKey("VendaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Produto");
+
+                    b.Navigation("Venda");
+                });
+
             modelBuilder.Entity("AppVendasWeb.Models.Produto", b =>
                 {
                     b.HasOne("AppVendasWeb.Models.Categoria", "Categoria")
@@ -111,6 +182,17 @@ namespace AppVendasWeb.Migrations
                         .IsRequired();
 
                     b.Navigation("Categoria");
+                });
+
+            modelBuilder.Entity("AppVendasWeb.Models.Venda", b =>
+                {
+                    b.HasOne("AppVendasWeb.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
                 });
 #pragma warning restore 612, 618
         }
