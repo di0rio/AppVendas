@@ -64,9 +64,9 @@
 						@Html.DisplayFor(modelItem => item.CadstroAtivo)
 					</td>
 					<td class="text-end">
-						<a class="btn btn-outline-success me-3" asp-action="Editar" asp-route-id="@item.ClienteId"><svg bootstrap-icon="PencilSquare" width="19" height="19" aria-label=""></svg></a>
-						<a class="btn btn-outline-info me-3" asp-action="Detalhes" asp-route-id="@item.ClienteId"><svg bootstrap-icon="Info" width="19" height="19" aria-label=""></svg></a>
-						<a class="btn btn-outline-danger me-3" asp-action="Deletar" asp-route-id="@item.ClienteId"><svg bootstrap-icon="Trash" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-success me-3" asp-action="Edit" asp-route-id="@item.ClienteId"><svg bootstrap-icon="PencilSquare" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-info me-3" asp-action="Details" asp-route-id="@item.ClienteId"><svg bootstrap-icon="Info" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-danger me-3" asp-action="Delete" asp-route-id="@item.ClienteId"><svg bootstrap-icon="Trash" width="19" height="19" aria-label=""></svg></a>
 					</td>
 				</tr>
 			}
