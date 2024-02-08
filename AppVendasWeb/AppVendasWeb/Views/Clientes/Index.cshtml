@@ -1,0 +1,75 @@
+﻿@model IEnumerable<AppVendasWeb.Models.Cliente>
+
+@{
+	ViewData["Title"] = "Cadastro de Clientes";
+}
+
+<h1 class="display-5 text-light my-4">Cadastro de Clientes</h1>
+
+<p>
+	<a asp-action="Create" class="btn btn-outline-light btn btn-lg d-inline-flex align-items-center"> <svg class="me-3" bootstrap-icon="PlusCircle" width="24" height="24" aria-label="Adicionar"></svg>Adicionar</a>
+</p>
+
+<div class="table-responsive text-center">
+	<table class="table table-dark table-striped table-hover">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.ClienteNome)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CPF)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Email)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.DataNascimento)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Celular)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.DataCadastro)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CadstroAtivo)
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.ClienteNome)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.CPF)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Email)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataNascimento)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Celular)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataCadastro)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.CadstroAtivo)
+					</td>
+					<td class="text-end">
+						<a class="btn btn-outline-success me-3" asp-action="Editar" asp-route-id="@item.ClienteId"><svg bootstrap-icon="PencilSquare" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-info me-3" asp-action="Detalhes" asp-route-id="@item.ClienteId"><svg bootstrap-icon="Info" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-danger me-3" asp-action="Deletar" asp-route-id="@item.ClienteId"><svg bootstrap-icon="Trash" width="19" height="19" aria-label=""></svg></a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
