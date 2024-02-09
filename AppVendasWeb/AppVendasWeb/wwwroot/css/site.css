@@ -21,7 +21,17 @@ body {
     margin-bottom: 60px;
 }
 
-.tabela {
-    border-radius: 1em;
-    background-color: red;
+.title {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 10s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 200%;
+    }
 }
