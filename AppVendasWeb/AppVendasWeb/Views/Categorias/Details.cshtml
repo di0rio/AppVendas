@@ -1,24 +1,24 @@
 ﻿@model AppVendasWeb.Models.Categoria
 
 @{
-    ViewData["Title"] = "Details";
+	ViewData["Title"] = "Details";
 }
 
 <h1>Detalhes</h1>
 
 <div>
-    <h4>Categoria</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoriaNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoriaNome)
-        </dd>
-    </dl>
+	<h4>Categoria</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CategoriaNome)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CategoriaNome)
+		</dd>
+	</dl>
 </div>
 <div>
-    <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.CategoriaId">Edit</a>
-    <a class="btn btn-light" asp-action="Index">Voltar</a>
+	<a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.CategoriaId">Edit</a>
+	<a class="btn btn-light" asp-action="Index">Voltar</a>
 </div>

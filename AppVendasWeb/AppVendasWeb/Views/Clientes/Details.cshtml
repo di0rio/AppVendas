@@ -1,60 +1,60 @@
 ﻿@model AppVendasWeb.Models.Cliente
 
 @{
-    ViewData["Title"] = "Detalhes";
+	ViewData["Title"] = "Detalhes";
 }
 
 <h1>Detalhes</h1>
 
 <div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ClienteNome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ClienteNome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CPF)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CPF)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataNascimento)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataNascimento)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Celular)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Celular)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DataCadastro)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DataCadastro)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CadstroAtivo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CadstroAtivo)
-        </dd>
-    </dl>
+	<h4>Cliente</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.ClienteNome)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.ClienteNome)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CPF)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CPF)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Email)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Email)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.DataNascimento)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.DataNascimento)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Celular)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Celular)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.DataCadastro)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.DataCadastro)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.CadstroAtivo)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.CadstroAtivo)
+		</dd>
+	</dl>
 </div>
 <div>
-    <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.ClienteId">Edit</a>
-    <a class="btn btn-light" asp-action="Index">Voltar</a>
+	<a asp-action="Edit" class="btn btn-info" asp-route-id="@Model?.ClienteId">Edit</a>
+	<a class="btn btn-light" asp-action="Index">Voltar</a>
 </div>
