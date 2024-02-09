@@ -1,53 +1,56 @@
 ﻿@model IEnumerable<AppVendasWeb.Models.Venda>
 
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Vendas";
 }
 
-<h1>Index</h1>
+<h1>Vendas</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+	<a asp-action="Create" class="btn btn-outline-light btn btn-lg d-inline-flex align-items-center"> <svg class="me-3" bootstrap-icon="PlusCircle" width="24" height="24" aria-label="Adicionar"></svg>Adicionar</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DataVenda)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorTotal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NotaFiscal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cliente)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataVenda)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValorTotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NotaFiscal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cliente.CPF)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.VendaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.VendaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.VendaId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive text-center">
+	<table class="table table-dark table-striped table-hover">
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.DataVenda)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ValorTotal)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.NotaFiscal)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.Cliente)
+				</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.DataVenda)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ValorTotal)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.NotaFiscal)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Cliente.CPF)
+					</td>
+					<td>
+						<a class="btn btn-outline-success me-3" asp-action="Edit" asp-route-id="@item.VendaId"><svg bootstrap-icon="PencilSquare" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-info me-3" asp-action="Details" asp-route-id="@item.VendaId"><svg bootstrap-icon="Info" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-danger me-3" asp-action="Delete" asp-route-id="@item.VendaId"><svg bootstrap-icon="Trash" width="19" height="19" aria-label=""></svg></a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
