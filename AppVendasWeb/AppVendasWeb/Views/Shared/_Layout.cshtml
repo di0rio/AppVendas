@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>@ViewData["Title"] - AppVendasWeb</title>
+	<title>@ViewData["Title"] - C#</title>
 	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/AppVendasWeb.styles.css" asp-append-version="true" />
@@ -16,7 +16,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-					<a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">AppVendasWeb</a>
+					<a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">C#</a>
 					<ul class="navbar-nav flex-grow-1">
 						<li class="nav-item">
 							<a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
@@ -33,9 +33,9 @@
 						<li class="nav-item">
 							<a class="nav-link text-light" asp-area="" asp-controller="Vendas" asp-action="Index">Vendas</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link text-light" asp-area="" asp-controller="ItemDaVendas" asp-action="Index">Itens Da Venda</a>
-						</li>
+						@* 						 <li class="nav-item">
+						<a class="nav-link text-light" asp-area="" asp-controller="ItemDaVendas" asp-action="Index">Itens Da Venda</a>
+						</li> *@
 					</ul>
 					<form class="d-flex" role="search">
 						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

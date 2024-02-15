@@ -42,10 +42,10 @@
 						@Html.DisplayFor(modelItem => item.NotaFiscal)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Cliente.CPF)
+						@Html.DisplayFor(modelItem => item.Cliente.ClienteNome)
 					</td>
 					<td>
-						<a class="btn btn-outline-dark me-3" asp-controller="ItemDaVendas" asp-action="Create" asp-route-id="@item.VendaId"><svg bootstrap-icon="PlusCircle" width="19" height="19" aria-label=""></svg></a>
+						<a class="btn btn-outline-dark me-3" asp-controller="ItemDaVendas" asp-action="Index" asp-route-id="@item.VendaId"><svg bootstrap-icon="PlusCircle" width="19" height="19" aria-label=""></svg></a>
 
 						<a class="btn btn-outline-success me-3" asp-action="Edit" asp-route-id="@item.VendaId"> <svg bootstrap-icon="PencilSquare" width="19" height="19" aria-label="Adicionar"></svg></a>
 						<a class="btn btn-outline-danger me-3" asp-action="Delete" asp-route-id="@item.VendaId"><svg bootstrap-icon="Trash" width="19" height="19" aria-label=""></svg></a>

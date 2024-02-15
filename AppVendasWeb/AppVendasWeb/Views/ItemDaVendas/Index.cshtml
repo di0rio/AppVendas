@@ -7,7 +7,7 @@
 <h1>Itens das Vendas</h1>
 
 <p>
-	<a asp-action="Create" class="btn btn-outline-light text-black btn btn-lg d-inline-flex align-items-center"> <svg class="me-3" bootstrap-icon="PlusCircle" width="24" height="24" aria-label="Adicionar"></svg>Adicionar</a>
+	<a asp-action="Create" asp-route-id=@ViewData["VendaId"] class="btn btn-outline-light text-black btn btn-lg d-inline-flex align-items-center"> <svg class="me-3" bootstrap-icon="PlusCircle" width="24" height="24" aria-label="Adicionar"></svg>Adicionar</a>
 
 </p>
 <div class="table-responsive text-center">
@@ -37,7 +37,7 @@
 						@Html.DisplayFor(modelItem => item.Produto.Descricao)
 					</td>
 					<td>
-						@Html.DisplayFor(modelItem => item.Venda.VendaId)
+						@Html.DisplayFor(modelItem => item.Venda.NotaFiscal)
 					</td>
 					<td>
 						@Html.DisplayFor(modelItem => item.Quantidade)
